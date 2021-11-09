@@ -3,9 +3,9 @@ using CalculatorLibrary;
 
 namespace CalculatorProgram
 {
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             bool endApp = false;
             // Display title as the C# console calculator app.
@@ -45,20 +45,15 @@ namespace CalculatorProgram
                 Console.Write("Your option? ");
 
                 string op = Console.ReadLine();
-
-                try
+                double result = calculator.DoOperation(cleanNum1, cleanNum2, op);
+                if (double.IsNaN(result))
                 {
-                    double result = calculator.DoOperation(cleanNum1, cleanNum2, op);
-                    if (double.IsNaN(result))
-                    {
-                        Console.WriteLine("This operation will result in a mathematical error.\n");
-                    }
-                    else Console.WriteLine("Your result: {0:0.##}\n", result);
+                    Console.WriteLine("This operation will result in a mathematical error.\n");
                 }
-                catch (Exception e)
+                else
                 {
-                    Console.WriteLine("Oh no! An exception occurred trying to do the math.\n - Details: " + e.Message);
-                }
+                    Console.WriteLine("Your result: {0:0.##}\n", result);
+                }                    
 
                 Console.WriteLine("------------------------\n");
 
