@@ -1,6 +1,7 @@
 ﻿using System;
+using CalculatorLibrary;
 
-namespace Calculator
+namespace CalculatorProgram
 {
     class Program
     {
