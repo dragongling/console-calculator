@@ -11,7 +11,7 @@ namespace CalculatorProgram
             // Display title as the C# console calculator app.
             Console.WriteLine("Console Calculator in C#\r");
             Console.WriteLine("------------------------\n");
-
+            Calculator calculator = new();
             while (!endApp)
             {
                 // Ask the user to type the first number.
@@ -48,7 +48,7 @@ namespace CalculatorProgram
 
                 try
                 {
-                    double result = Calculator.DoOperation(cleanNum1, cleanNum2, op);
+                    double result = calculator.DoOperation(cleanNum1, cleanNum2, op);
                     if (double.IsNaN(result))
                     {
                         Console.WriteLine("This operation will result in a mathematical error.\n");
