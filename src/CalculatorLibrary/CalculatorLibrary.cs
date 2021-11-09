@@ -54,7 +54,11 @@ namespace CalculatorLibrary
                 default:
                     break;
             }
-            writer.WritePropertyName("Result");
+            try
+            {
+                writer.WritePropertyName("Result");
+            }
+            catch (JsonWriterException) { }
             writer.WriteValue(result);
             writer.WriteEndObject();
 
